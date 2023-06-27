@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  resources :birds, only: [:index, :show, :create]
+  get '/students', to: 'students#index'
+  get '/students/:id', to: 'students#show'
+  get '/students?name=?', to: 'students#index'
+  get '/students/grades', to: 'students#grades'
+  get '/students/highest-grade', to: 'students#highest_grade'
 end
